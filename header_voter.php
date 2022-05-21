@@ -20,9 +20,6 @@
     </div>
     <ul class="nav navbar-nav">
       <li ><a href="voter.php">Home</a></li>
-      <!--<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="lan_view.php">vote results</a></li>-->
           <li><a href="profile.php">Profile</a></li>
           <li><a href="change_pass.php">change pass</a></li>
       </li>

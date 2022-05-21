@@ -8,6 +8,7 @@ if(empty($_POST['lan'])){
 
 $lan = $_POST['lan'];
 $sess = $_SESSION['SESS_NAME'] ;
+$area = $_SESSION['area'];
 $lan = addslashes($_POST['lan']);
 $lan = mysqli_real_escape_string($con, $lan);
 
@@ -18,7 +19,12 @@ if(mysqli_num_rows($sql) > 0 ) {
 	exit();
 }
 else{
-	$sql1 =mysqli_query($con, 'UPDATE languages SET votecount = votecount + 1 WHERE fullname = "'.$_POST['lan'].'"');
+	if($area == "area1"){
+		$sql1 =mysqli_query($con, 'UPDATE languages SET area1 = area1 + 1 WHERE fullname = "'.$_POST['lan'].'"');
+	}else{
+		$sql1 =mysqli_query($con, 'UPDATE languages SET area2 = area2 + 1 WHERE fullname = "'.$_POST['lan'].'"');
+	}
+
 	$sql2 =mysqli_query($con, 'UPDATE voters SET status="VOTED" WHERE username="'.$_SESSION['SESS_NAME'].'"');
 	$sql3 = mysqli_query($con, 'UPDATE voters SET voted= "'.$_POST['lan'].'" WHERE username="'.$_SESSION['SESS_NAME'].'"');
 	

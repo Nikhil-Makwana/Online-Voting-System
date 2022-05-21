@@ -13,32 +13,51 @@ if (isset($_SESSION['SESS_NAME'])!="") {
 
 <style>
 	.container{
-		width:400px;
-		height:480px;
+		width:600px;
+		height:700px;
 		background-color : #383838;
 		border-radius: 10px;
 
+	}
+
+	h3,label{
+		color:white;
 	}
 </style>
 
 <div class="container">
 <center>
-<legend> <h3 style="color:white;"> Register </h3></legend> </center>
+<legend> <h3> Register </h3></legend> </center>
 <center><font size="4" >
 <form action= "reg_action.php" method= "post" id="myform" >
-<label style="color:white;">Firstname : </label>
+<label >Firstname : </label>
 <input type="text" name="firstname" value="" />
 <br>
 <br>
-<label style="color:white;">Lastname : </label>
+<label >Lastname : </label>
 <input type="text" name="lastname" value="" />
 <br>
 <br>
-<label style="color:white;">Username : </label>
+<label >Aadharcard No : </label>
 <input type="text" name="username" value="" />
 <br>
 <br>
-<label style="color:white;">Password : </label>
+<label >Mobile No. : </label>
+<input type="text" name="mobile" value="" />
+<br>
+<br>
+<label >Address : </label>
+<textarea rows="3" cols="25" name="address" value="" ></textarea>
+<br>
+<br>
+
+<label>Area : </label>
+<input type="radio" name="area"  value="area1" aria-label="..."><label>Area1 </label>
+<input type="radio" name="area"  value="area2" aria-label="..."><label>Area2 </label>
+<br>
+<br>
+
+<label>Password : </label>
 <input type="password" name="password" value="" />
 <br>
 <br>

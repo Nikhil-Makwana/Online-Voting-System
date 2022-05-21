@@ -25,9 +25,6 @@ if(isset($_POST['cpass'])) {
 	$currentpass = $_POST['cpassword'] ;
 	$newpass = $_POST['npassword'];
 	$cnewpass = $_POST['cnpassword'];
-	$currentpass = addslashes($currentpass);
-	$newpass = addslashes($newpass);
-	$cnewpass = addslashes($cnewpass); 
 	$currentpass = mysqli_real_escape_string($con, $currentpass);
 	$newpass = mysqli_real_escape_string($con, $newpass);
 	$cnewpass = mysqli_real_escape_string($con, $cnewpass);

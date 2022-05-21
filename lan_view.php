@@ -24,10 +24,13 @@ include "auth.php";
 include "header_admin.php";
 ?>
 
-<center><h3> Voting till now  </h3></center><br>
+<center><h3> Voting till now </h3></center><br>
 <?php
 include "connection.php";
 $data = mysqli_query($con, 'SELECT * FROM languages' );
+$sql1 =  mysqli_query($con, 'SELECT count(area1) FROM languages' );
+$sql2 = mysqli_query($con, 'SELECT count(area2) FROM languages' );
+
 if (mysqli_num_rows($data)== 0 ) {
 	echo '<font color="red">No results found</font>';
 }
@@ -38,7 +41,8 @@ else {
 	<th scope="col"><center>Id</center></td>		
 	<th scope="col"><center>Party Name</center></td>
 	<th scope="col"><center>About</center></td>
-	<th scope="col"><center>Total Vote</center></td>
+	<th scope="col"><center>Area1</center></td>
+	<th scope="col"><center>Area2</center></td>
 	</tr>
 	<thead>';
 while($mb=mysqli_fetch_object($data))
@@ -46,14 +50,17 @@ while($mb=mysqli_fetch_object($data))
 			$id=$mb->lan_id;
 			$name=$mb->fullname;
 			$about=$mb->about;
-			$vote=$mb->votecount;
+			$area1=$mb->area1;
+			$area2=$mb->area2;
 			echo '<tr>';
 	echo '<td>'.$id.'</td>';		
 	echo '<td>'.$name.'</td>';
 	echo '<td>'.$about.'</td>';
-	echo '<td>'.$vote.'</td>';
+	echo '<td>'."$area1".'</td>';
+	echo '<td>'."$area2".'</td>';
 	echo "</tr>";
 		}
+
 		echo'</table></center>';
 	}
 ?>
